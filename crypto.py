@@ -12,21 +12,20 @@ from Crypto.PublicKey import RSA
 
 str1 = input('type in the line you wannna encrypt:\n')
 
+#encryption
 f = open('mypubkey.pem','r')
 public_key1 = RSA.importKey(f.read())
 f.close()
 
 encrypted = public_key1.encrypt(str1.encode('utf-8'), 32)
-#message to encrypt is in the above line 'encrypt this message'
-
-print ('encrypted message:', encrypted[0]) #ciphertext
-
+print ('encrypted message:', encrypted[0])
 
 f = open ('encryption', 'wb')
-f.write(encrypted[0]) #write ciphertext to file
+#write encrypted to file
+f.write(encrypted[0])
 f.close()
 
-#decrypted code below
+#decryption
 f = open('myprikey.pem','r')
 key1 = RSA.importKey(f.read())
 f.close()
@@ -42,7 +41,7 @@ decrypted = key1.decrypt(message)
 
 print ('decrypted', decrypted)
 
+#write the decrpyted to a text file
 f = open ('decryption.txt', 'w')
-#f.write(str(message))
 f.write(decrypted.decode('utf-8'))
 f.close()
