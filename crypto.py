@@ -21,7 +21,7 @@ encrypted = public_key1.encrypt(str1.encode('utf-8'), 32)
 print ('encrypted message:', encrypted[0])
 
 f = open ('encryption', 'wb')
-#write encrypted to file
+#write the encrypted to file
 f.write(encrypted[0])
 f.close()
 
