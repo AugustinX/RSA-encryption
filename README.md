@@ -6,3 +6,6 @@ two files:
   keygen: randomly generates a pair of key for later use.
 
 it can be used for secured data transmission which is especially important in the countries where surveillance conducted by goverment against ordinary people is very common.
+
+How to use:
+publish the pubkey file (PEM) to your peers, they use a modified code of the "crypto" to encrypt. then send the encrypted file to you. Similarly you use it to decrypt. Notice: DON'T PUBLISH YOUR PRIVATE KEY!
